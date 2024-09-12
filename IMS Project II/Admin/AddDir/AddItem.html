@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Item</title>
+
+    <link rel="stylesheet" href="/util.css" />
+    <link rel="stylesheet" href="/adminRoot.css" />
+    <link rel="stylesheet" href="AddItem.css" />
+  </head>
+  <body>
+    <!-- Side Bar start -->
+    <aside>
+      <nav>
+        <div class="logo">
+          <a href="#"
+            ><img src="/Images/MainLogo.svg" alt="main logo" loading="lazy"
+          /></a>
+        </div>
+        <!-- side Bar navigation list -->
+        <div class="nav-list">
+          <ul>
+            <li class="list-row active">
+              <a href="#"
+                ><img
+                  src="/Images/Dashboard.svg"
+                  alt="dashboard logo"
+                />Dashboard</a
+              >
+            </li>
+            <li class="list-row">
+              <a href="#"
+                ><img
+                  src="/Images/inventory.svg"
+                  alt="inventory logo"
+                />Inventory</a
+              >
+            </li>
+            <li class="list-row">
+              <a href="#"
+                ><img src="/Images/additem.svg" alt="add item logo" />Add
+                Item</a
+              >
+            </li>
+            <li class="list-row">
+              <a href="#"
+                ><img src="/Images/dollor.svg" alt="sold item logo" />Sold
+                Item</a
+              >
+            </li>
+          </ul>
+          <div class="logout">
+            <a href="#"
+              ><img src="/Images/logout.svg" alt="log out" />Log Out</a
+            >
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <!-- Side Bar end -->
+
+    <!-- main content starts -->
+    <div class="wrapper">
+      <header>
+        <!-- heading of main content beside sidebar -->
+        <div class="main-heading">
+          <div class="main-heading-left">
+            <h1>Add Items</h1>
+            <p>Get your Storage Dynamic</p>
+          </div>
+          <div class="main-heading-right">
+            <!-- display that it is staff -->
+            <span class="staff">Staff</span>
+            <p id="display-date"></p>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <div class="additem-container">
+          <div class="additem-left">
+            <div class="additem-left-heading">
+              <img src="/Images/inventory.svg" alt="inv item" />
+              <p>Add</p>
+            </div>
+            <div class="upload-wrapper">
+              <div class="upload-container">
+                <input
+                  type="file"
+                  id="fileInput"
+                  class="file-input"
+                  accept="image/*"
+                  hidden
+                />
+                <div class="upload-box" id="uploadBox">
+                  <img
+                    src="/Images/dragdrop.svg"
+                    alt="upload icon"
+                    class="upload-icon"
+                  />
+                  <p>Choose Image or Drag and Drop Image</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="additem-right">
+            <form action="">
+              <div class="additem-title">
+              <label for="">Title:</label>
+              <input required type="text" placeholder="Title..." name="" id="">
+            </div>
+            <div class="additem-pq">
+              <label for="" >Price:</label>
+              <input required type="number" class="priceinput" placeholder="Price..." name="" id="">
+              <label for="">Quantity:</label>
+              <input required type="number" placeholder="Quantity..." name="" id=""> 
+            </div>
+
+            <div class="additem-tag-category">
+              <div class="dropdown-container">
+                <select class="styled-select" required>
+                  <option value="" disabled selected>Tag</option>
+                  <option value="1">Tag 1</option>
+                  <option value="2">Tag 2</option>
+                  <option value="3">Tag 3</option>
+                </select>
+
+                <select class="styled-select" required>
+                  <option value="" disabled selected>Category</option>
+                  <option value="1">Category 1</option>
+                  <option value="2">Category 2</option>
+                  <option value="3">Category 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="additem-location">
+              <label for="">Location:</label>
+              <input required type="text" placeholder="Location..." name="" id="">
+            </div>
+            <div class="additem-description">
+              <label for="">Description:</label>
+              <textarea required name="" placeholder="Description" id=""></textarea>
+            </div>
+            <!-- <div class="additem-cta">
+              <button class="add-btn"><img src="/Images/additem.svg" alt="add">Add to Inventory</button>
+              <button class="cancel-btn">Cancel</button>
+            </div> -->
+
+            <div class="additem-cta">
+              <button class="add-btn"><img src="/Images/additem.svg" alt="add">Add to Inventory</button>
+              <button class="cancel-btn">Cancel</button>
+            </div>
+            </form>
+          </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- main content ends -->
+
+    <script>
+      // Update the date and time in every heading of the pages
+      function updateDate() {
+        const now = new Date();
+        // Format the date
+        const formattedDate = now.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+        // Format the time
+        const formattedTime = now.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        });
+        const fullDate = `${formattedDate}, ${formattedTime}`;
+
+        const display = document.getElementById("display-date");
+        display.textContent = fullDate;
+      }
+      updateDate();
+      // Update the date every minute
+      setInterval(updateDate, 60000);
+
+      // for Drag and Drop functionality
+      function DragDrop() {
+        const uploadBox = document.getElementById("uploadBox");
+        const fileInput = document.getElementById("fileInput");
+
+        uploadBox.addEventListener("click", () => {
+          fileInput.click(); // Trigger file input when upload box is clicked
+        });
+
+        // Highlight the box on dragover
+        uploadBox.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          uploadBox.classList.add("dragging");
+        });
+
+        // Remove highlight on dragleave
+        uploadBox.addEventListener("dragleave", () => {
+          uploadBox.classList.remove("dragging");
+        });
+
+        // Handle file drop
+        uploadBox.addEventListener("drop", (e) => {
+          e.preventDefault();
+          uploadBox.classList.remove("dragging");
+
+          const files = e.dataTransfer.files;
+          handleFiles(files);
+        });
+
+        // Handle file input change (for file upload via button)
+        fileInput.addEventListener("change", (e) => {
+          const files = e.target.files;
+          handleFiles(files);
+        });
+
+        function handleFiles(files) {
+          if (files.length > 0) {
+            const file = files[0];
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+              // Create an image element
+              const image = document.createElement("img");
+              image.src = e.target.result;
+
+              // Set the image styles
+              image.style.width = "100%";
+              image.style.height = "100%";
+              image.style.objectFit = "cover"; // Ensure the image covers the box
+
+              // Clear the upload box content and append the new image
+              uploadBox.innerHTML = "";
+              uploadBox.appendChild(image);
+            };
+
+            reader.readAsDataURL(file);
+          }
+        }
+      }
+      DragDrop();
+    </script>
+  </body>
+</html>

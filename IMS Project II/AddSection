@@ -1,0 +1,210 @@
+<section>
+  <div class="add-section">
+    <div class="add-section-left">
+      <div class="add-section-left-heading">
+        <img src="/Images/inventory.svg" alt="inventory logo" />
+        <p>Add</p>
+      </div>
+      <div class="upload-container">
+        <input
+          type="file"
+          id="fileInput"
+          class="file-input"
+          accept="image/*"
+          hidden
+        />
+        <div class="upload-box" id="uploadBox">
+          <img
+            src="/Images/dragdrop.svg"
+            alt="upload icon"
+            class="upload-icon"
+          />
+          <p>Choose Image or Drag and Drop Image</p>
+        </div>
+      </div>
+    </div>
+    <div class="add-section-right">
+      <div class="add-section-right-title">
+        <label for="">Title:</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Title..."
+          required
+          maxlength="50"
+        />
+      </div>
+      <div class="add-section-right-pq">
+        <div class="add-section-right-pq-price">
+          <label for="">Price:</label>
+          <input type="text" name="" id="" placeholder="Price..." required />
+        </div>
+        <div class="add-section-right-pq-quantity">
+          <label for="">Quantity:</label>
+          <input type="text" name="" id="" placeholder="Quantity..." required />
+        </div>
+      </div>
+      <div class="add-section-right-tag-category">
+        <div class="dropdown-container">
+          <select class="styled-select">
+            <option value="" disabled selected>Tag</option>
+            <option value="1">Tag 1</option>
+            <option value="2">Tag 2</option>
+            <option value="3">Tag 3</option>
+          </select>
+
+          <select class="styled-select">
+            <option value="" disabled selected>Category</option>
+            <option value="1">Category 1</option>
+            <option value="2">Category 2</option>
+            <option value="3">Category 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="add-section-right-location">
+        <label for="">Location:</label>
+        <input type="text" name="" id="" placeholder="Loaction..." required />
+      </div>
+      <div class="add-section-right-description">
+        <label for="">Description:</label>
+        <textarea
+          name=""
+          id=""
+          placeholder="Description..."
+          required
+        ></textarea>
+      </div>
+      <div class="add-section-right-cta">
+        <div class="cta-left">
+          <button>
+            <img src="/Images/additem.svg" alt="add image" />Add to Inventory
+          </button>
+        </div>
+        <div class="cta-right"></div>
+        <button>Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- .add-section {
+        width: 100%;
+        background-color: white;
+        height: 67vh;
+        margin-top: 2.5rem;
+        border-radius: 0.7rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        padding: 2rem;
+      } -->
+
+/* Add item left section starts */ .add-section-left { min-width: 24rem;
+border-right: 1px solid black; color: #a340f3; position: relative; }
+.add-section-left-heading { display: flex; gap: 0.6rem; align-items: center;
+width: fit-content; } .add-section-left-heading img { width: 2.4rem; height:
+2.2rem; filter: hue-rotate(270deg) saturate(500%); /* purple color*/ }
+.add-section-left-heading p { font-size: 1.8rem; text-transform: uppercase;
+font-weight: 900; } .upload-container { display: flex; justify-content: center;
+align-items: center; margin-top: 2rem; } /* Add item upload image section starts
+*/ .upload-box { width: 19rem; /* Set a width, you can use percentages like 100%
+if responsive */ height: 19rem; border: 2px dashed #d3d3d3; border-radius: 10px;
+display: flex; flex-direction: column; justify-content: center; align-items:
+center; background-color: #faf8ff; cursor: pointer; transition: border 0.3s
+ease; overflow: hidden; /* Ensures the image fits within the box */ }
+.upload-box img { max-width: 100%; max-height: 100%; object-fit: cover; /*
+Ensures the image doesn't overflow */ } .upload-box:hover { border-color:
+#800080; } .upload-box.dragging { border-color: #800080; background-color:
+#f0e8ff; } .upload-icon { width: 50px; height: 50px; margin-bottom: 15px; }
+.upload-box p { color: #808080; font-size: 14px; } .file-input { display: none;
+} /* Add item upload image section ends */ /* Add item left section ends */ /*
+Add item right section starts */ /* Add item right section ends */
+
+<!-- right wala sab -->
+.additem-title, .additem-pq, .additem-location, .additem-description { display:
+flex; align-items: center; margin-bottom: 15px; } .additem-title label,
+.additem-pq label, .additem-location label, .additem-description label { width:
+100px; /* Fixed width for the label */ text-align: right; /* Center the label
+text */ } .additem-title input, .additem-pq input, .additem-location input,
+.additem-description input { flex-grow: 1; /* Take up the remaining space */
+margin-left: 1rem; padding: 0.5rem; box-sizing: border-box; border-radius: 5px;
+border: 2px solid var(--text-color); outline: none; } .additem-title
+input:focus, .additem-pq input:focus, .additem-location input:focus,
+.additem-description input:focus { border: 2px solid var(--primary-color); }
+.additem-pq input { padding-left: 1rem; font-size: 0.8rem; } .additem-title
+input { padding: 1rem; font-size: 0.9rem; } .additem-tag-category {
+margin-bottom: 1rem; /* display: grid; grid-template-columns: repeat(2,
+auto-fit); grid-template-rows: repeat(1, auto-fit); */ background-color: red;
+width: 100%; } .dropdown-container { width: 100%; display: flex;
+justify-content: space-around; } .styled-select { padding: 0.45rem; display:
+flex; } .additem-cta { display: flex; justify-content: space-evenly; margin-top:
+20px; } .additem-cta button { padding: 10px 20px; background-color: #007bff;
+border: none; color: white; cursor: pointer; display: flex; align-items: center;
+gap: 8px; } .additem-cta button:hover { background-color: #0056b3; }
+.additem-cta button:nth-child(2) { background-color: #dc3545; } .additem-cta
+button:nth-child(2):hover { background-color: #c82333; }
+
+
+.additem-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.9rem;
+  background-color: red;
+  width: 100%;
+  /* margin-left: 5rem; */
+}
+
+
+
+.additem-cta button:hover {
+  background-color: #0056b3;
+}
+
+.additem-cta button:nth-child(2) {
+  background-color: #dc3545;
+  margin-left: 5rem;
+  padding: 0.9rem;
+}
+.additem-cta button:nth-child(1) {
+  margin-left: 5rem;
+  font-weight: 600;
+}
+
+.additem-cta button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+
+/* .additem-cta {
+  display: flex;
+  background-color: red;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8.8rem;
+}
+
+.additem-cta button {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 5px;
+}
+
+.additem-cta .add-btn {
+  background-color: var(--primary-color);
+  padding: 0.9rem 4rem;
+  font-weight: 600;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.additem-cta .cancel-btn {
+  background-color: #800080;
+  padding: 0.9rem 4rem;
+  width: 200px;
+} */

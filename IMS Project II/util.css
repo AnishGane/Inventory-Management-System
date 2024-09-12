@@ -1,0 +1,169 @@
+:root {
+  --login-bgcolor: #e0efff;
+  --login-color: #0b1e33;
+  --nav-color: #0b1e33;
+  --text-color: #888888;
+  --logo-bgcolor: #00537a;
+  --bgcolor: #e0efff;
+  --admin-cta-color: #ddb2ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--bgcolor);
+  overflow-x: hidden;
+}
+
+/* sideabr.html css starts */
+aside {
+  width: max-content;
+  height: 100%;
+  background-color: var(--nav-color);
+  position: relative;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+.logo {
+  width: 100%;
+  max-height: 5rem;
+  background-color: var(--logo-bgcolor);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: -0.625rem -0.125rem 1rem 0.125rem rgba(0, 0, 0, 0.685);
+}
+
+.nav-list {
+  margin: 0 1rem 0 0;
+  display: inline-block;
+  padding: 1.25rem;
+  height: 100%;
+}
+
+.list-row {
+  display: flex;
+  max-width: 100%;
+  min-width: auto;
+  align-items: center;
+  margin-bottom: 0.1rem;
+}
+
+.list-row a {
+  padding: 0.625rem 0.313rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.list-row img {
+  margin-right: 0.75rem;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.list-row a:hover {
+  background-color: rgba(0, 83, 122, 0.22);
+  border-radius: 0.313rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+/* Style active link and its image */
+.active a {
+  color: var(--selected-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.active img {
+  color: white;
+}
+
+.logout {
+  position: absolute;
+  bottom: 1.6rem;
+  padding: 0.23rem;
+  margin-left: 1rem;
+}
+
+.logout a {
+  display: flex;
+  align-items: center;
+}
+
+.logout a img {
+  margin-right: 0.5rem;
+}
+/* sideabr.html css ends */
+
+/* AddItem.html global heading starts */
+.wrapper {
+  margin: 2vw 4vw;
+  width: 100%;
+}
+
+header {
+  max-height: 5rem;
+  /* background-color: red; */
+}
+
+.main-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.main-heading-left h1 {
+  color: #a340f3;
+}
+
+.main-heading-left p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.main-heading-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.main-heading-right span {
+  background-color: var(--admin-cta-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4.2rem;
+}
+
+.main-heading-right p {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+/* AddItem.html global heading starts */
